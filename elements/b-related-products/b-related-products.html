@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html" />
+<link rel="import" href="../../bower_components/polymer-flex-layout/polymer-flex-layout.html" />
+<link rel="import" href="../b-product/b-product.html" />
+
+<polymer-element name="b-related-products" attributes="products">
+    <template>
+        <style>
+            section {padding: 1rem; background: #f1f1f1;}
+            b-product {margin: 0 0.5rem; padding: 1rem; background: white;}
+        </style>
+        <section>
+            <content></content>
+            <polymer-flex-layout justify="center" align="end" isContainer>
+                <template repeat="{{product in products}}">
+                    <b-product
+                        flex
+                        badges="{{product.badges}}"
+                        image="{{product.image}}"
+                        brand="{{product.brand}}"
+                        model="{{product.model}}"
+                        price="{{product.price}}"></b-product>
+                </template>
+            </polymer-flex-layout>
+        </section>
+    </template>
+    <script>
+        Polymer('b-related-products', {
+            applyAuthorStyles: false,
+            products: []
+        });
+    </script>
+</polymer-element>

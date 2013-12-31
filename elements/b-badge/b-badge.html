@@ -1,0 +1,42 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html" />
+<link rel="import" href="../../bower_components/polymer-flex-layout/polymer-flex-layout.html" />
+
+<polymer-element name="b-badge" attributes="type">
+    <template>
+        <style>
+            .badge {
+                border-radius: 100%;
+                width: 4em;
+                height: 4em;
+                padding: 1em;
+                font-size: 0.750rem;
+                color: white;
+                text-align: center;
+            }
+
+            .badge.is-best-buy {
+                background: red;
+            }
+
+            .badge.is-energy-saver {
+                background: green;
+            }
+        </style>
+        <span class="badge is-{{type}}">
+            <polymer-flex-layout align="center" justify="center"></polymer-flex-layout>
+            <span class="badge__inner">
+                <template if="{{type == 'best-buy'}}">
+                    Best Buy
+                </template>
+                <template if="{{type == 'energy-saver'}}">
+                    Energy Saver
+                </template>
+            </span>
+        </span>
+    </template>
+    <script>
+        Polymer('b-badge', {
+            applyAuthorStyles: false
+        });
+    </script>
+</polymer-element>

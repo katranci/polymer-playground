@@ -1,0 +1,22 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html" />
+<link rel="import" href="../../bower_components/polymer-flex-layout/polymer-flex-layout.html" />
+<link rel="import" href="../b-badge/b-badge.html" />
+<link rel="import" href="../b-responsive-image/b-responsive-image.html" />
+
+<polymer-element name="b-product" attributes="badges image brand model price">
+    <template>
+        <polymer-flex-layout justify="end" isContainer>
+            <template repeat="{{badges}}">
+                <b-badge type="{{type}}"></b-badge>
+            </template>
+        </polymer-flex-layout>
+        <b-responsive-image src="{{image}}"></b-responsive-image>
+        <p>{{brand}} {{model}}</p>
+        <p>{{price}}</p>
+    </template>
+    <script>
+        Polymer('b-product', {
+            applyAuthorStyles: false
+        });
+    </script>
+</polymer-element>

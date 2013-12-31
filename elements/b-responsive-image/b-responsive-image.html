@@ -1,0 +1,15 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html" />
+
+<polymer-element name="b-responsive-image" attributes="src">
+    <template>
+        <style>
+            img {width: 100%;}
+        </style>
+        <img src="{{src}}" />
+    </template>
+    <script>
+        Polymer('b-responsive-image', {
+            applyAuthorStyles: false
+        });
+    </script>
+</polymer-element>
